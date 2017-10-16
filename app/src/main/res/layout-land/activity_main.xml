@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="us.solidstudios.metronome.MainActivity"
+    android:contextClickable="false"
+    android:clickable="false"
+
+    android:screenOrientation="portrait"
+    android:focusable="false">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="90dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/quarternote"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:id="@+id/equals"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        android:layout_marginBottom="14dp"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_marginLeft="8dp"
+        android:typeface="serif" />
+
+    <TextView
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="100"
+        android:id="@+id/bpmText"
+        android:textColor="#000000"
+        android:textSize="52sp"
+        android:textAlignment="center"
+        android:typeface="serif"
+        android:layout_marginRight="30dp"
+        android:textIsSelectable="false"
+        android:layout_alignTop="@+id/equals"
+        android:layout_alignStart="@+id/Subdivision" />
+
+    <Button
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/increase"
+        android:textSize="30dp"
+        android:visibility="visible"
+        android:background="#ffffff"
+        android:typeface="serif"
+        android:layout_marginRight="14dp"
+        android:onClick="onClick"
+        android:layout_alignBottom="@+id/equals"
+        android:layout_alignStart="@+id/divider1" />
+
+    <Button
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/decrease"
+        android:textSize="30dp"
+        android:visibility="visible"
+        android:background="#ffffff"
+        android:typeface="serif"
+        android:layout_marginRight="29dp"
+        android:onClick="onClick"
+        android:layout_alignBottom="@+id/bpmText"
+        android:layout_toStartOf="@+id/txtSubdivision" />
+
+    <EditText
+        android:layout_width="54dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/top"
+        android:layout_marginTop="24dp"
+        android:typeface="serif"
+        android:editable="true"
+        android:enabled="true"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:text="4"
+        android:textSize="40sp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="54dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/bottom"
+        android:typeface="serif"
+        android:editable="true"
+        android:enabled="true"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:text="4"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:layout_below="@+id/top"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#fafafa" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="__________________________________"
+        android:id="@+id/divider"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="254dp"
+        android:layout_height="100dp"
+        android:text="beep"
+        android:id="@+id/btnSound"
+        android:textSize="40sp"
+        android:visibility="visible"
+        android:background="#fafafa"
+        android:typeface="serif"
+        android:singleLine="true"
+        android:onClick="onClick"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="_________________________________"
+        android:id="@+id/divider1"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:layout_alignTop="@+id/divider"
+        android:layout_toEndOf="@+id/bpmText" />
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Subdivision"
+        android:cropToPadding="false"
+        android:adjustViewBounds="false"
+        android:onClick="onClick"
+        android:src="@drawable/quarternotesmall"
+        android:background="#fafafa"
+        android:layout_alignTop="@+id/bottom"
+        android:layout_toStartOf="@+id/btnSound" />
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageButton"
+        android:cropToPadding="false"
+        android:adjustViewBounds="false"
+        android:background="@drawable/play"
+        android:onClick="onClick"
+        android:layout_alignTop="@+id/Subdivision"
+        android:layout_toEndOf="@+id/Subdivision"
+        android:layout_marginStart="79dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="______________________________________"
+        android:id="@+id/divider3"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:layout_alignTop="@+id/divider"
+        android:layout_alignEnd="@+id/imageButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Subdivision"
+        android:id="@+id/txtSubdivision"
+        android:typeface="serif"
+        android:textSize="25dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/divider1" />
+
+</RelativeLayout>
